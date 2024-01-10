@@ -8,7 +8,7 @@ int main(int argc, char **argv, char **con)
 	char *text =NULL;
 	char **order = NULL;
 	int status = 0;
-	(void) argc;
+	(void)argc;
 
 	while (true)
 	{

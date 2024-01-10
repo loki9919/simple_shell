@@ -16,14 +16,10 @@ int exec(char **order, char **con, char **argv)
 			exit(EXIT_FAILURE);
 		}
 	}
-	else if (subprocess > 0)
+	else
 	{
 		wait(&state);
 		free_string(order);
-	}
-	else
-	{
-		perror(argv[0]);
 	}
 	return(WEXITSTATUS(state));
 }
