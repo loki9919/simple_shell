@@ -12,7 +12,7 @@ int exec(char **order, char **con, char **argv)
 		{
 			perror(argv[0]);
 			free_string(order);
-			exit(127);
+			exit(EXIT_FAILURE);
 		}
 	}
 	else if (subprocess > 0)

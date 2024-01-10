@@ -16,7 +16,8 @@ int main(int argc, char **argv, char **con)
 		text = capture_text();
 		if (text == NULL)
 		{
-			write(1, "\n", 1);
+			if (isatty(STDIN_FILENO))
+				write(1, "\n", 1);
 			return (status);
 		}
 		order = term_analyzer(text);
