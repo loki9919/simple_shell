@@ -21,7 +21,7 @@ int main(int argc, char **argv, char **con)
 			return (status);
 		}
 		order = term_analyzer(text);
-		if (order == NULL)
+		if (!order)
 		{
 			continue;
 		}
