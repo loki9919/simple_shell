@@ -12,7 +12,8 @@ int main(int argc, char **argv, char **con)
 
 	while (true)
 	{
-		write(1, "$ ", 2);
+		if (isatty(STDIN_FILENO))
+			write(1, "$ ", 2);
 		text = capture_text();
 		if (text == NULL)
 		{
