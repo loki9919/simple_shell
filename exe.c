@@ -18,7 +18,7 @@ int exec(char **order, char **con, char **argv)
 	}
 	else
 	{
-		waitpid(child, &state, 0);
+		waitpid(subprocess, &state, 0);
 		free_string(order);
 	}
 	return(WEXITSTATUS(state));
