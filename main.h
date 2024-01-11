@@ -12,7 +12,7 @@
 #include <errno.h>
 
 char **term_analyzer(char *text);
-void free_string(char **str);
+void free_data(char **data);
 int exec(char **order, char **con, char **argv);
 char *capture_text(void);
 char *_strdup(char *str);

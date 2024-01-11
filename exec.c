@@ -11,14 +11,14 @@ int exec(char **order, char **con, char **argv)
 		if (execve(order[0], order, con) == -1)
 		{
 			perror(argv[0]);
-			free_string(order);
+			free_data(order);
 			exit(EXIT_FAILURE);
 		}
 	}
 	else if (subprocess > 0)
 	{
 		wait(&state);
-		free_string(order);
+		free_data(order);
 	}
 	else
 	{

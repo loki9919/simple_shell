@@ -1,17 +1,17 @@
 #include "main.h"
 
-void free_string(char **str)
+void free_data(char **data)
 {
 	int n = 0;
-	if (!str)
+	if (!data)
 	{
 		return;
 	}
-	while (str[n] != NULL)
+	while (data[n] != NULL)
 	{
-		free(str[n]);
-		str[n] = NULL;
+		free(data[n]);
+		data[n] = NULL;
 		n++;
 	}
-	free(str);
+	free(data);
 }

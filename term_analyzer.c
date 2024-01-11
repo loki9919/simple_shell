@@ -4,7 +4,7 @@ char **term_analyzer(char *text)
 {
 	char *term = NULL;
 	char *temp = NULL;
-	char **order;
+	char **order = NULL;
 	int c, c1;
 
 	if (text == NULL)
