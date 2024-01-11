@@ -13,12 +13,12 @@ int main(int argc, char **argv, char **con)
 	while (true)
 	{
 		if (isatty(STDIN_FILENO))
-			write(1, "$ ", 2);
+			write(STDOUT_FILENO, "$ ", 2);
 		text = capture_text();
 		if (text == NULL)
 		{
 			if (isatty(STDIN_FILENO))
-				write(1, "\n", 1);
+				write(STDOUT_FILENO, "\n", 1);
 			return (status);
 		}
 		order = term_analyzer(text);
