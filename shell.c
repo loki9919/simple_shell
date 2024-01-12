@@ -10,12 +10,14 @@ int main(int argc, char **argv, char **con)
 	int status = 0;
 	(void)argc;
 
-	while (true)
+	while (1)
 	{
+		if (isatty(0))
+			write(1, "$ ", 2);
 		text = capture_text();
 		if (text == NULL)
 		{
-			if (isatty(-1))
+			if (isatty(0))
 				write(1, "\n", 1);
 			return (status);
 		}
