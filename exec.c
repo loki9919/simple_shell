@@ -2,7 +2,7 @@
 
 int exec(char **order, char **con, char **argv) 
 {
-	int state;
+	int state = 0;
 	pid_t subprocess;
 
 	subprocess = fork();

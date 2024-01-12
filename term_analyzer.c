@@ -12,6 +12,11 @@ char **term_analyzer(char *text)
 		return (NULL);
 	}
 	temp = _strdup(text);
+	if (temp == NULL)
+	{
+		free(text);
+		return (NULL);
+	}
 	term = strtok(temp, " \n\t");
 	if (term == NULL)
 	{
@@ -25,6 +30,12 @@ char **term_analyzer(char *text)
 	}
 	free(temp);
 	order = malloc(sizeof(char *) * (c +1));
+	if (order == NULL)
+	{
+		free(temp);
+		free(text);
+		return (NULL);
+	}
 	term = strtok(text, " \n\t");
 	for (c1 = 0; term != NULL; c1++)
 	{
