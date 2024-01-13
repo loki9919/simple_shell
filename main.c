@@ -1,17 +1,23 @@
 #include "main.h"
 
 /**
- *
+ * main - entry point for the simple shell program.
+ * @argc: the number of arguments passed to the program.
+ * @argv: an array of strings containing program arguments.
+ * @con: an array of strings containing environment variables.
+ * Return: the exit status of the simple shell program.
  */
 int main(int argc, char **argv, char **con)
 {
-	char *text =NULL;
+	char *text = NULL;
 	char **order = NULL;
 	int status = 0;
 	(void)argc;
 
 	while (1)
 	{
+		if (isatty(0))
+			write(1, "$ ", 2);
 		text = capture_text();
 		if (text == NULL)
 		{
