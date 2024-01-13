@@ -12,8 +12,6 @@ int main(int argc, char **argv, char **con)
 
 	while (1)
 	{
-		if (isatty(0))
-			write(1, "$ ", 2);
 		text = capture_text();
 		if (text == NULL)
 		{
